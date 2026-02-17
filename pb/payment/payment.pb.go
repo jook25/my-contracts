@@ -129,7 +129,7 @@ const file_proto_payment_proto_rawDesc = "" +
 	"\vPayResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2M\n" +
 	"\x0ePaymentService\x12;\n" +
-	"\x0eProcessPayment\x12\x13.payment.PayRequest\x1a\x14.payment.PayResponseB-Z+github.com/youruser/my-contracts/pb/paymentb\x06proto3"
+	"\x0eProcessPayment\x12\x13.payment.PayRequest\x1a\x14.payment.PayResponseB+Z)github.com/jook25/my-contracts/pb/paymentb\x06proto3"
 
 var (
 	file_proto_payment_proto_rawDescOnce sync.Once

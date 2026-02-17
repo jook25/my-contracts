@@ -1,4 +1,4 @@
-module github.com/youruser/my-contracts
+module github.com/jook25/my-contracts
 
 go 1.24.1
 
