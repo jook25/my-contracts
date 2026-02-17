@@ -25,6 +25,7 @@ type PayRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OrderId       string                 `protobuf:"bytes,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
 	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	Currency      string                 `protobuf:"bytes,3,opt,name=currency,proto3" json:"currency,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -73,9 +74,17 @@ func (x *PayRequest) GetAmount() float64 {
 	return 0
 }
 
+func (x *PayRequest) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
 type PayResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -117,17 +126,26 @@ func (x *PayResponse) GetSuccess() bool {
 	return false
 }
 
+func (x *PayResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_proto_payment_proto protoreflect.FileDescriptor
 
 const file_proto_payment_proto_rawDesc = "" +
 	"\n" +
-	"\x13proto/payment.proto\x12\apayment\"?\n" +
+	"\x13proto/payment.proto\x12\apayment\"[\n" +
 	"\n" +
 	"PayRequest\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x16\n" +
-	"\x06amount\x18\x02 \x01(\x01R\x06amount\"'\n" +
+	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\x1a\n" +
+	"\bcurrency\x18\x03 \x01(\tR\bcurrency\"A\n" +
 	"\vPayResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2M\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage2M\n" +
 	"\x0ePaymentService\x12;\n" +
 	"\x0eProcessPayment\x12\x13.payment.PayRequest\x1a\x14.payment.PayResponseB+Z)github.com/jook25/my-contracts/pb/paymentb\x06proto3"
 
