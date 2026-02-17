@@ -1,0 +1,18 @@
+syntax = "proto3";
+// สำคัญ: ต้องระบุ path ให้ตรงกับชื่อ module
+option go_package = "github.com/youruser/my-contracts/pb/payment";
+
+package payment;
+
+service PaymentService {
+  rpc ProcessPayment(PayRequest) returns (PayResponse);
+}
+
+message PayRequest {
+  string order_id = 1;
+  double amount = 2;
+}
+
+message PayResponse {
+  bool success = 1;
+}
