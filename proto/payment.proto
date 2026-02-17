@@ -12,6 +12,7 @@ message PayRequest {
   string order_id = 1;
   double amount = 2;
   string currency = 3;
+  string user_id = 4;
 }
 
 message PayResponse {
